@@ -1,8 +1,8 @@
 {
-  "name": "cryptographic-hashes",
+  "name": "hash-message",
   "version": "1.0.0",
-  "description": "Ethereum bootcamp cryptographic hashes exercise",
-  "main": "index.js",
+  "description": "Hash message exercise",
+  "main": "hashMessage.js",
   "scripts": {
     "test": "mocha test.js"
   },
