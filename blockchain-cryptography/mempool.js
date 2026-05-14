@@ -10,7 +10,8 @@ function addTransaction(transaction) {
 }
 
 function mine() {
-    
+    const block = { id: blocks.length}
+    blocks.push(block)
 }
 
 module.exports = {
