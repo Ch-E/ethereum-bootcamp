@@ -10,7 +10,15 @@ function addTransaction(transaction) {
 }
 
 function mine() {
+    const transactions = [];
+    
+    transactions.push(...mempool.splice(0, MAX_TRANSACTIONS));
+        
     const block = { id: blocks.length}
+    block.transactions = transactions
+    const jsonBlock = JSON.stringify(block)
+    const hashBlock = SHA256(jsonBlock)
+    block.hash = hashBlock
     blocks.push(block)
 }
 
