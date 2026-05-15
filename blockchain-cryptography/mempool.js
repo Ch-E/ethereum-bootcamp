@@ -16,9 +16,16 @@ function mine() {
         
     const block = { id: blocks.length}
     block.transactions = transactions
-    const jsonBlock = JSON.stringify(block)
-    const hashBlock = SHA256(jsonBlock)
-    block.hash = hashBlock
+    block.nonce = -1
+
+    do {
+        block.nonce++
+        const jsonBlock = JSON.stringify(block)
+        const hashBlock = SHA256(jsonBlock)
+        block.hash = hashBlock
+    } while (BigInt(`0x${block.hash}`) > TARGET_DIFFICULTY)
+        
+
     blocks.push(block)
 }
 
