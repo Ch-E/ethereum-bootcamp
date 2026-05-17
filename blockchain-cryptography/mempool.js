@@ -24,7 +24,6 @@ function mine() {
         const hashBlock = SHA256(jsonBlock)
         block.hash = hashBlock
     } while (BigInt(`0x${block.hash}`) > TARGET_DIFFICULTY)
-        
 
     blocks.push(block)
 }
