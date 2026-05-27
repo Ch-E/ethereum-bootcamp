@@ -21,6 +21,10 @@ class Transaction {
         if (inputAmount < outputAmount) {
             throw new Error("Not enough here");
         }
+
+        for (let i = 0; i < this.inputUTXOs.length; i++) {
+            this.inputUTXOs[i].spend()
+        }
     }
 }
 
