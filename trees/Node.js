@@ -1,8 +1,8 @@
 class Node {
     constructor(data) {
-        node.data = data
-        node.left = null
-        node.right = null
+        this.data = data
+        this.left = null
+        this.right = null
     }
 }
 
