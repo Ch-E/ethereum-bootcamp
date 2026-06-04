@@ -7,6 +7,12 @@ class Tree {
         if (!this.root) {
             this.root = node
         }
+
+        if (node.data > this.root.data) {
+            this.root.right = node
+        } else {
+            this.root.left = node
+        }
     }
 }
 
