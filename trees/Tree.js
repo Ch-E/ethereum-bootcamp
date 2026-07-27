@@ -29,6 +29,24 @@ class Tree {
             }
         }
     }
+
+    hasNode(number) {
+        let current = this.root
+
+        while (current) {
+            if (number === current.data) {
+                return true
+            }
+
+            if (number > current.data) {
+                current = current.right
+            } else {
+                current = current.left
+            }
+        }
+
+        return false
+    }
 }
 
 module.exports = Tree;
