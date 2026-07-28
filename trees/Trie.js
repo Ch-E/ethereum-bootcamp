@@ -18,6 +18,20 @@ class Trie {
 
         current.isWord = true
     }
+
+    contains(word) {
+        let current = this.root
+
+        for (const char of word) {
+            if (!current.children[char]) {
+                return false
+            }
+
+            current = current.children[char]
+        }
+
+        return current.isWord
+    }
 }
 
 module.exports = Trie;
